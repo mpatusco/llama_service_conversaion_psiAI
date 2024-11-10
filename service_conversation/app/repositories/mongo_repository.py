@@ -12,6 +12,7 @@ async def save_to_mongo(key: str, data: dict, overwrite=False):
         data (dict): Data to be saved.
         overwrite (bool): Flag to overwrite existing data. Defaults to False.
     """
+    print(f"salvo como {key}")
     if overwrite:
         db.conversations.replace_one({"_id": key}, {"_id": key, **data}, upsert=True)
     else:

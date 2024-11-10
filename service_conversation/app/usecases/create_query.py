@@ -9,4 +9,4 @@ def create_query(fields: List[str]) -> dict:
     Returns:
         dict: MongoDB query for the specified fields.
     """
-    return {field: 1 for field in fields}
+    return {"_id": field for field in fields}
