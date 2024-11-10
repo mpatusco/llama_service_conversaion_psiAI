@@ -2,7 +2,7 @@ from pymongo import MongoClient
 from app.config.settings import DATABASE_URL
 
 client = MongoClient(DATABASE_URL)
-db = client["service_conversation"]
+db = client["conversation"]
 
 async def save_to_mongo(key: str, data: dict, overwrite=False):
     """Save data to MongoDB with a unique key.
